@@ -1,0 +1,7 @@
+numpy
+pandas
+requests
+pickle
+sklearn
+matplotlib
+seaborn

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block form%}
+<div style="background-image: url(./static/images/bgimage.png); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% auto;">
+    <div class="container">
+        <a href="/"><button class="btn btn-primary btn-lg float-right mt-3">Main</button></a><br>
+    </div>
+    <div class="container col-xs-5 col-md-4 mt-5" style="opacity: 0.8;">
+        <div class="card">
+            <div class="card-header">
+                <h3>Data Taking For Stock Prediction</h3>
+            </div>
+            <div class="card-body">
+                <form action="/predict"  method="POST">
+                    <div class="form-group">
+                        <label for="stockname"><b>Stock Name</b></label>
+                        <input type="text" name="name" placeholder="Enter Stock Name" value = "AAPL" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="open"><b>Today's open price</b></label><br>
+                        <input type="number" step="0.00001" min ="0.00001" max = "10000" name="open"placeholder="Enter Today's open price " class="form-control">
+                    </div>
+                       
+                    <div class="form-group">
+                        <label for="low"><b>Today's Low</b></label><br>
+                        <input type="number" step="0.00001" min ="0.00001" max = "10000" name="low" placeholder="Enter Today's low " class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="high"><b>Today's High</b></label><br>
+                        <input type="number" step="0.00001" min = "0.00001" max ="10000"name="high" placeholder="Enter Today's high" class="form-control">
+                    </div>
+                   
+				   
+                    <div class="form-group">
+                        <label for="volume"><b>Stock Volume</b></label><br>
+                        <input type="number" step="0.00001" min = "0.00001" max = "100000000" name="volume" placeholder="Enter stock volume" class="form-control">
+                    </div>
+                   
+                    <div class="container">
+                        <button class="btn btn-success btn-lg" type="submit">Submit</button>
+                        <button class="btn btn-warning btn-lg float-right" type="reset">Clear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>
+  </div>
+{% endblock%}
