@@ -9,7 +9,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import confusion_matrix,accuracy_score
 import pickle
 
-data = pd.read_csv("C:/Users/venka/StockDataPrediction/StockData.csv")
+data = pd.read_csv("C:/Users/venka/StockDataPrediction/Dataset/StockData.csv")
 print(data.head(10))
 
 
@@ -67,9 +67,9 @@ accuracy=regressor.score(x_test,y_test)
 print(accuracy)
 
 
-print('Mean Absolute Error:',metrics.mean_absolute_error(y_test,predicated))
-print('Mean Squared Error:',metrics.mean_squared_error(y_test,predicated))
-print('Root Mean Squared Error:',math.sqrt(metrics.mean_squared_error(y_test,predicated)))
+#print('Mean Absolute Error:',metrics.mean_absolute_error(y_test,predicated))
+#print('Mean Squared Error:',metrics.mean_squared_error(y_test,predicated))
+#print('Root Mean Squared Error:',math.sqrt(metrics.mean_squared_error(y_test,predicated)))
 
 graph=df.head(100)
 graph.plot(kind='bar')
