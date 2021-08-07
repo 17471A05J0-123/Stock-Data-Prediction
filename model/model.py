@@ -9,7 +9,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import confusion_matrix,accuracy_score
 import pickle
 
-data = pd.read_csv("C:/Users/venka/StockDataPrediction/Dataset/StockData.csv")
+data = pd.read_csv("D:\StockDataPrediction\Dataset\StockData.csv")
 print(data.head(10))
 
 

@@ -1,0 +1,109 @@
+<!Doctype html>
+<html>
+<head>
+
+  <style>
+    label{
+         width:100px;
+         display:inline-block;
+         }
+    #form{
+          border-radius:5px;
+          background-color:light green;
+          color:black;
+          width:90%;
+		  height:700px;
+          }
+   #submit{
+           border-radius:5px;
+           position:relative;
+			left:1px;
+            height:35px;
+           background-color:#FFB6C1;
+           }
+	table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+}
+
+	td, th {
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+}
+
+	tr:nth-child(even) {
+			background-color: #dddddd;
+}
+
+  </style>
+
+</head>
+
+<body  style = "height:1000px;"> 
+<center><h1 style = "color : red">STOCK PRICE PREDICTION</h1>
+ <div id="form">
+    <form action="/predict" method="POST">
+	<table>
+  <tr>
+    <td><label > Stock Name:</label></td>
+    <td><input type = "text" style="width: 8em" name="name"  placeholder="AAPL" value = "AAPL"></td>
+  </tr>
+  <tr>
+    <td><label>Open Price:</label></td>
+    <td><input type="number" style="width: 8em" name="open" placeholder="Open Price" required="required" step="0.00001" min ="0.00001" max = "10000"></td>
+  </tr>
+  <tr>
+    <td><label>Today's Low :</label></td>
+    <td><input type="number" style="width: 8em" name="low" placeholder="Toady's low" required="required" step="0.00001" min ="0.00001" max = "10000"></td>
+  </tr>
+  <tr>
+    <td><label>Today's High</label></td>
+    <td><input type="number" style="width: 8em" placeholder="Toady High price" name="high" required="required" onkeypress="return check(event,value)" step="0.00001" min ="0.00001" max = "10000"></td>
+  </tr>
+  <tr>
+    <td><label> Stock Volume</label></td>
+    <td><input type="number" style="width: 8em"  placeholder="Stock volume" name="volume" required="required" onkeypress="return check(event,value)" min ="1" max = "100000000"></td>
+   
+  </tr>
+  <tr>
+    <td colspan = "2"><input type="submit" id="submit" style=width:118px;height:45px" value="Predict"></td>
+    
+  </tr>
+</table>
+
+<!--
+ <br> <label > Stock Name:</label><input type = "text" style="width: 8em" name="name"  placeholder="AAPL" value = "AAPL"><br>
+
+
+<br> <label>Open Price:</label><input type="number" style="width: 8em" name="open" placeholder="Open Price" required="required" step="0.00001" min ="0.00001" max = "10000">
+<br>
+  
+<br> <label>Toady's Low :</label><input type="number" style="width: 8em" name="low" placeholder="Toady's low" required="required" step="0.00001" min ="0.00001" max = "10000"><br>
+  
+<br><label>Today's High</label><input type="number" style="width: 8em" placeholder="Toady High price" name="high" required="required" onkeypress="return check(event,value)" step="0.00001" min ="0.00001" max = "10000"><br>
+  
+<br> <label> Stock Volume</label><input type="number" style="width: 8em"  placeholder="Sto44444ck volume" name="volume" required="required" onkeypress="return check(event,value)" min ="1" max = "100000000"><br>
+        
+  
+<br>   <input type="submit" id="submit" style=width:118px;height:45px" value="Predict"> <br>
+
+ -->
+
+
+
+   </form>
+      <div class="row">
+   {% if prediction_text %}
+    <h4 style="text-align: center; color:green"> Close Price is {{prediction_text }} </h4>
+    {% endif %}
+    </div>
+
+    </div>
+    
+
+
+
+</body>
+</html>
