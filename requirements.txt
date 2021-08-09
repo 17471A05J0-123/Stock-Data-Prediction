@@ -1,6 +1,7 @@
 numpy
 pandas
-requests
 sklearn
 matplotlib
 seaborn
+pickle
+math
