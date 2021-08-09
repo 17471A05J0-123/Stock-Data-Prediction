@@ -5,7 +5,7 @@
   <style>
   @media all and (max-width: 699px) and (min-width: 520px), (min-width: 1151px) {
    body {
-    background: #ccc;
+    background: white;
   }
 		}
     label{
@@ -16,7 +16,7 @@
           border-radius:5px;
           color:black;
           width:90%;
-		  height:700px;
+		 
           }
    #submit{
            border-radius:5px;
@@ -45,7 +45,7 @@
 
 </head>
 
-<body  style = "height:1000px;"> 
+<body "> 
 <center><h1 style = "color : red">STOCK PRICE PREDICTION</h1>
  <div id="form">
     <form action="/predict" method="POST">
@@ -98,7 +98,7 @@
 
 
    </form>
-      <div class="row">
+      <div>
    {% if prediction_text %}
     <h4 style="text-align: center; color:green"> Close Price is {{prediction_text }} </h4>
     {% endif %}
